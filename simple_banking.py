@@ -31,9 +31,28 @@ class Bank:
 # Create a bank account object
 obj = Bank("XYZ", 1000)
 
-# Perform transactions
-obj.deposit_amount(500)
-obj.get_balance()
-obj.withdraw_amount(400)
-obj.get_balance()
-obj.view_transaction_history()
+while True:
+    print("Choose an option:")
+    print("1. Deposit")
+    print("2. Withdraw")
+    print("3. Check Balance")
+    print("4. View Transaction History")
+    print("5. Exit")
+
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        amount = float(input("Enter the amount to deposit: "))
+        obj.deposit_amount(amount)
+    elif choice == 2:
+        amount = float(input("Enter the amount to withdraw: "))
+        obj.withdraw_amount(amount)
+    elif choice == 3:
+        obj.get_balance()
+    elif choice == 4:
+        obj.view_transaction_history()
+    elif choice == 5:
+        print("Exiting...")
+        break
+    else:
+        print("Invalid choice. Please try again.")
