@@ -9,6 +9,7 @@ class Bank:
             self.initial_balance += amount
             self.transaction_history.append(f"Deposited {amount}")
             print(f"{self.account_holder_name}, your account has been deposited {amount} successfully.")
+            self.print_current_balance()
         else:
             print("Sorry! Insufficient amount to deposit.")
 
@@ -17,6 +18,7 @@ class Bank:
             self.initial_balance -= amount
             self.transaction_history.append(f"Withdrew {amount}")
             print(f"Amount {amount} withdrawn successfully!")
+            self.print_current_balance()
         else:
             print("Sorry! Insufficient amount for withdrawal.")
 
@@ -27,6 +29,9 @@ class Bank:
         print("Transaction History:")
         for transaction in self.transaction_history:
             print(transaction)
+
+    def print_current_balance(self):
+        print(f"Your current balance is {self.initial_balance:.2f}")  # Format to 2 decimal places
 
 # Create a bank account object
 obj = Bank("XYZ", 1000)
